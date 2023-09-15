@@ -44,9 +44,9 @@ class TodoApi {
   public async deleteTodo(id: number) {
     const todos = await this.storage.getItem<Todo[]>('todos');
 
-    todos?.filter((todo) => todo.id !== id);
+    const newTodos = todos?.filter((todo) => todo.id !== id);
 
-    await this.storage.setItem('todos', todos);
+    await this.storage.setItem('todos', newTodos);
   }
 
   public async toggleTodo(id: number) {
@@ -66,6 +66,14 @@ class TodoApi {
     await this.storage.setItem('todos', todos);
 
     return todos[todoIdx]!;
+  }
+
+  public async deleteCompletedTodos() {
+    const todos = await this.storage.getItem<Todo[]>('todos');
+
+    const newTodos = todos?.filter((todo) => !todo.completed);
+
+    await this.storage.setItem('todos', newTodos);
   }
 }
 
