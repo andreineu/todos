@@ -15,6 +15,7 @@ export const TodoFilters: FC<TodoFiltersProps> = (props) => {
   return (
     <div className="flex justify-between">
       <button
+        data-testid="filter-all"
         onClick={() => onSelectFilter('all')}
         className={clsx(
           selectedFilter === 'all' && 'border border-neutral-400',
@@ -24,6 +25,7 @@ export const TodoFilters: FC<TodoFiltersProps> = (props) => {
         All
       </button>
       <button
+        data-testid="filter-active"
         onClick={() => onSelectFilter('active')}
         className={clsx(
           selectedFilter === 'active' && 'border border-neutral-400',
@@ -33,6 +35,7 @@ export const TodoFilters: FC<TodoFiltersProps> = (props) => {
         Active
       </button>
       <button
+        data-testid="filter-completed"
         onClick={() => onSelectFilter('completed')}
         className={clsx(
           selectedFilter === 'completed' && 'border border-neutral-400',

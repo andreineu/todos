@@ -21,6 +21,7 @@ export const TodoForm: FC<TodoFormProps> = (props) => {
   return (
     <form onSubmit={handleSubmit} className="flex gap-1">
       <input
+        data-testid="todo-input"
         className="focus-visible:ring-ring flex h-9 w-full rounded-md border border-neutral-600 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-neutral-500 focus-visible:outline-none focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50"
         type="text"
         placeholder="Add a new todo..."
