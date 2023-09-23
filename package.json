@@ -9,7 +9,10 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "prepare": "husky install",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "ci:tsc": "tsc",
+    "ci:lint": "next lint",
+    "ci:test:e2e": "playwright test"
   },
   "dependencies": {
     "@types/node": "20.6.1",
