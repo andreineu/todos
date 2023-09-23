@@ -12,7 +12,7 @@ export const TodoActions: FC<TodoActionsProps> = (props) => {
 
   return (
     <div className="font-sm flex items-center justify-between gap-4 text-neutral-600">
-      <div>{itemsLeft} items left</div>
+      <div data-testid="todo-count">{itemsLeft} items left</div>
       <TodoFilters {...rest} />
       <button type="button" onClick={onClearCompleted}>
         Clear completed
