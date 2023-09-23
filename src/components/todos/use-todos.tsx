@@ -4,6 +4,7 @@ import { type Filter, type Todo, todoApi } from '@/lib/api';
 
 export const UseTodos = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState<Filter>('all');
 
   useEffect(() => {
@@ -17,8 +18,12 @@ export const UseTodos = () => {
   const itemsNotCompleted = todos.filter((todo) => !todo.completed).length;
 
   const handleAddTodo = async (newTodo: string) => {
+    setIsLoading(true);
+
     const todo = await todoApi.addTodo({ text: newTodo });
     setTodos([...todos, todo]);
+
+    setIsLoading(false);
   };
 
   const handleRemoveTodo = (id: number) => {
@@ -65,5 +70,6 @@ export const UseTodos = () => {
     itemsNotCompleted,
     selectedFilter,
     filteredTodos,
+    isLoading,
   };
 };

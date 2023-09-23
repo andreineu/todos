@@ -13,12 +13,13 @@ export const Todos = () => {
     itemsNotCompleted,
     selectedFilter,
     filteredTodos,
+    isLoading,
   } = UseTodos();
 
   return (
     <div className="flex flex-col gap-2 text-lg">
       <h1>Todo App</h1>
-      <TodoForm addTodo={handleAddTodo} />
+      <TodoForm isLoading={isLoading} addTodo={handleAddTodo} />
       <TodoList
         todos={filteredTodos}
         onRemove={handleRemoveTodo}
