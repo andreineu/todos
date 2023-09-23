@@ -26,4 +26,4 @@
 - TypeScript
 - localforage (for api)
 - TailwindCSS
-- Cypress
+- Playwright
