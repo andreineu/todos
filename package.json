@@ -8,9 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "e2e": "start-server-and-test dev http://localhost:3000 \"cypress open --e2e\"",
-    "e2e:headless": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@types/node": "20.6.1",
@@ -29,10 +28,9 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.38.1",
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
-    "cypress": "^13.2.0",
-    "cypress-real-events": "^1.10.3",
     "eslint-config-prettier": "^9.0.0",
     "husky": "^8.0.0",
     "lint-staged": "^14.0.1",
